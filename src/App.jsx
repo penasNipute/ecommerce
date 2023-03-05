@@ -1,11 +1,12 @@
-
+import { Ads } from "./components/Ads/Ads"
+// import { Footer } from "./components/Fotter"
 
 export function App() {
   
 
   return (
     <>
-      <h1>Hello world</h1>
+      <Ads />
     </>
   )
 }
