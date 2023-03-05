@@ -1,11 +1,12 @@
-import { useState } from 'react'
+import React from "react"
+import { Home } from "./components/homePage/home"
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
-    <div className="App flex bg-purple-3000">
-      <h1>Hello world</h1>
+    <div>
+      <Home/>
     </div>
   )
 }
