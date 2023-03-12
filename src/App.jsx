@@ -1,13 +1,15 @@
-import React from "react"
+import { Ads } from "./components/Ads/Ads"
+// import { Footer } from "./components/Fotter"
 import { Login_Signin } from "./components/auth/login"
 import { Home } from "./components/homePage/home"
 
-export default function App() {
+export function App() {
+  
 
   return (
-    <div>
-      <Login_Signin/>
-    </div>
+    <>
+      
+    </>
   )
 }
 
