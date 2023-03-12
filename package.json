@@ -9,10 +9,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@hookform/resolvers": "^2.9.11",
     "@types/nodemon": "^1.19.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.8.0"
+    "react-hook-form": "^7.43.5",
+    "react-icons": "^4.8.0",
+    "yup": "^1.0.2",
+    "zod": "^3.21.4"
   },
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.2",
