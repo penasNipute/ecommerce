@@ -98,11 +98,11 @@ export const Login_Signin = () => {
 
     return (
         <section className="container mx-auto">
-            <div className="flex justify-between items-center h-screen">
-                <div className="w-1/2">
+            <div className="flex lg:justify-between items-center h-screen justify-center">
+                <div className="hidden lg:block lg:w-1/2">
                     <img src="assets/auth_img.svg" alt="imagem" />
                 </div>
-                <div className="flex w-1/2 justify-center items-center">
+                <div className="flex lg:w-1/2 justify-center items-center">
                     {auth ? <SignIn /> : <Login />}
                 </div>
             </div>
