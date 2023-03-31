@@ -3,9 +3,10 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from "yup"
 
 
-export function Ads(){
-    
+export function ProfileAccount(){
+
   const phoneRegExp = /^[0-9]{9,15}$/
+
 
   const productSchema = yup.object().shape({
     // photo:yup.,
@@ -20,40 +21,36 @@ export function Ads(){
     condition:yup.string().required()
   })
 
-
   const { register, handleSubmit, watch, formState: { errors } } = useForm({
     resolver: yupResolver(productSchema)
   });
 
   const onSubmit = data => console.log(data);
 
+
   return(
-    
-    <div className="bg-blue-100 py-8 font-Poppins">
-      <div className="flex justify-center border-b border-black py-4">
-        <h1 className=" font-semibold text-5xl">Post Ad</h1>
-      </div>
-      
-
-      <form 
+    <div className="w-full bg-white px-20 py-10">
+      <div className="w-full bg-blue-100 px-28 py-5">
+       <div className="flex gap-40 text-blue-600 pb-10">
+          <div className="flex flex-col flex-wrap text-center">
+            <img src="/assets/profile_pic.svg"  alt="Profile pic" />
+            <p className="font-semibold text-4xl">Lisa Jocktan</p>
+            <p className="font-Poppins font-medium text-xl text-blue-300">Menber Since 2017</p>
+          </div>
+          <div className="flex py-10 gap-20 items-start font-medium text-3xl">
+            <div className="flex gap-10 items-center">
+              <a href="#"><img src="/assets/carbon_ibm-watson-orders.svg" className="w-6 h-6 min-w-full" alt="carbon icon" /></a>
+              <a href="#">Ads</a>
+            </div>
+            <a href="#" className="bg-gray-300 px-4 rounded-lg">Edit Account</a>
+          </div>
+       </div>
+       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col gap-4 w-4/5 mx-auto pt-5"
-      >
-      <h2 className="font-semibold text-xl">Add Photos</h2>
-      <p>First picture  is the title picture Grab & dra photos to change the order</p>
-      <span>Supported format are .jpg .gif and .png</span>
-
-        <input 
-          className="w-4/5 bg-blue-100 border- border-spacing-1 border border-zinc-900 py-3 px-8 rounded-md" 
-          type="file" 
-          required 
-          accept="image/png, image/jpg, image/gif"
-          {...register("photo")} 
-        />
-        
-
-        <input 
-          className="w-4/5 bg-blue-100 border- border-spacing-1 border border-zinc-900 py-3 px-8 rounded-md" 
+        className="flex flex-col gap-4 w-4/5 pt-5"
+       >
+         <input 
+          className="bg-blue-100 border-b-2 border-b-black w-4/5 text-black px-1 py-2 outline-none" 
           {...register("productName")} 
           placeholder="Product name"
         />
@@ -61,17 +58,18 @@ export function Ads(){
           {errors?.productName?.message}
         </span>
 
+        {/*
         <input
-           className=" w-4/5 bg-blue-100 border- border-spacing-1 border border-zinc-900 py-3 px-8 rounded-md appearance-none scroll-smooth" 
+           className=" bg-blue-100 border-b-2 border-b-black w-4/5 text-black px-1 py-2 outline-none" 
            {...register("price")}
            placeholder="Price"
         />
          <span className="erro text-red-900">
           {errors?.price?.message}
         </span>
-
+        */}
         <input
-          className="w-4/5 bg-blue-100 border- border-spacing-1 border border-zinc-900 py-3 px-8 rounded-md" 
+          className="bg-blue-100 border-b-2 border-b-black w-4/5 text-black px-1 py-2 outline-none" 
           {...register("description")}
           placeholder="Description" 
         />
@@ -80,7 +78,7 @@ export function Ads(){
         </span>
 
         <select 
-          className="w-4/5 bg-blue-100 border- border-spacing-1 border border-zinc-900 py-3 px-8 rounded-md" 
+          className="bg-blue-100 border-b-2 border-b-black w-4/5 text-black px-1 py-2 outline-none" 
           placeholder="University Name"
           {...register("universityName")}
         >
@@ -96,7 +94,7 @@ export function Ads(){
         </span>
 
         <input
-            className="w-4/5 bg-blue-100 border- border-spacing-1 border border-zinc-900 py-3 px-8 rounded-md"
+            className="bg-blue-100 border-b-2 border-b-black w-4/5 text-black px-1 py-2 outline-none"
            placeholder=" Phone Number" 
            {...register("phoneNumber")}
         />
@@ -104,8 +102,9 @@ export function Ads(){
           {errors?.phoneNumber?.message}
         </span>
 
+        {/* 
         <select 
-          className="w-4/5 bg-blue-100 border- border-spacing-1 border border-zinc-900 py-3 px-8 rounded-md" 
+          className="bg-blue-100 border-b-2 border-b-black w-4/5 text-black px-1 py-2 outline-none" 
           placeholder="Condition"
           {...register("condition")}
         >
@@ -116,13 +115,9 @@ export function Ads(){
         <span className="erro text-red-00">
           {errors?.condition?.message}
         </span>
-
-        <button 
-          className="text-xl font-semibold bg-red-600 py-2 max-w-sm w-full m-auto rounded-md text-white"
-        >
-          POST
-        </button>
-      </form>
+        */}
+       </form>
+      </div>
     </div>
   )
 }
